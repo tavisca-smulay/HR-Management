@@ -9,6 +9,6 @@ public class ReviewerService extends EmployeeService {
     }
 
     public void seeSummaryReport(String departmentName){
-
+        reviewerBL.seeReportSummary(departmentName);
     }
 }

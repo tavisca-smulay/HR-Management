@@ -2,6 +2,7 @@ package com.hrms.main;
 import com.hrms.businessLogic.EmployeeBL;
 import com.hrms.businessLogic.HRBL;
 import com.hrms.businessLogic.ReviewerBL;
+import com.hrms.service.EmployeeService;
 import com.hrms.service.RoleFactory;
 import java.util.Scanner;
 
@@ -9,7 +10,8 @@ public class HRMSMain {
     public static void main(String[] args) {
         mainMenu();
     }
-    public static  void mainMenu(){
+
+    public static void mainMenu(){
         Object role = RoleFactory.getRole();
         if(role instanceof HRBL){
             hrTask((HRBL)role);
@@ -18,7 +20,7 @@ public class HRMSMain {
             reviewrTask((ReviewerBL)role);
         }
         else {
-            employeeTask((EmployeeBL)role);
+            employeeTask((EmployeeService) role);
         }
     }
     public static void hrTask(HRBL hr) {
@@ -36,7 +38,7 @@ public class HRMSMain {
                     hr.addEmployee();
                     break;
                 case  2 :
-                    hr.deleteEmployee();
+                    hr.deleteEmployee(1);
                 case 3:
                     hr.seeHistory();
                 case 4:
@@ -68,10 +70,12 @@ public class HRMSMain {
         }while (n>0 && n<4);
     }
 
-    public static void employeeTask(EmployeeBL emp){
+    public static void employeeTask(EmployeeService emp){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter your Employee Id");
         int id = sc.nextInt();
-        emp.validateEmployee(id);
+        boolean result = emp.validateEmployee(id);
+        if(result) System.out.println("Valid Employee");
+        else System.out.println("Employee doesn't exist");
     }
 }

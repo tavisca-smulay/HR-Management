@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="36fc5154-57ba-411c-8597-e57203ea5990" name="Default Changelist" comment="" />
+    <list default="true" id="36fc5154-57ba-411c-8597-e57203ea5990" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hrms/businessLogic/EmployeeBL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hrms/businessLogic/EmployeeBL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hrms/businessLogic/HRBL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hrms/businessLogic/HRBL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hrms/businessLogic/ReviewerBL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hrms/businessLogic/ReviewerBL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hrms/dao/DBHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hrms/dao/DBHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hrms/main/HRMSMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hrms/main/HRMSMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hrms/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hrms/service/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hrms/service/HRService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hrms/service/HRService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hrms/service/ReviewerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hrms/service/ReviewerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hrms/service/RoleFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hrms/service/RoleFactory.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +32,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1Ts3fow6zRCZE1IQ9AltHuiMAH5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/hrms" />
   </component>
   <component name="RunDashboard">
@@ -68,5 +85,16 @@
       <updated>1574235081243</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -12,6 +12,7 @@ public class ReviewerBL extends EmployeeBL{
     }
 
     public void seeReportSummary(String departmentName){
-        System.out.println("Summary Report");
+        query = "select employee.empID, employee.empName, rating, remarks from pa_form join employee where employee.empID = pa_form.empID and employee.department =" + departmentName;
+        dbHelper.seeReportSummary(query);
     }
 }

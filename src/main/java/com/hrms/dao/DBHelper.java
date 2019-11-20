@@ -42,11 +42,11 @@ public class DBHelper {
             statement = connection.createStatement();
             resultSet = statement.executeQuery(query);
             resultSet.next();
-            System.out.println(resultSet.getString(1));
-            System.out.println(resultSet.getString(2));
-            System.out.println(resultSet.getString(3));
-            System.out.println(resultSet.getString(4));
-            System.out.println(resultSet.getString(5));
+            System.out.println("EmployeeID: " + resultSet.getInt(1));
+            System.out.println("EmployeeName: " + resultSet.getString(2));
+            System.out.println("Department: " + resultSet.getString(3));
+            System.out.println("Skills: " + resultSet.getString(4));
+            System.out.println("Role: " + resultSet.getString(5));
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -77,5 +77,73 @@ public class DBHelper {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public void seeReportSummary(String query) {
+        connection = dbConnector.connectToDB();
+        try {
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(query);
+            while(resultSet.next()) {
+                System.out.println("EmployeeID: " + resultSet.getInt(1));
+                System.out.println("EmployeeName: " + resultSet.getString(2));
+                System.out.println("Rating: " + resultSet.getDouble(3));
+                System.out.println("Remarks: " + resultSet.getString(4));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean validateEmployee(int empID) {
+        connection = dbConnector.connectToDB();
+        String query = "select count(*) from employee where empID = " + empID;
+        try {
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(query);
+            resultSet.next();
+            if(resultSet.getInt(1) != 0) return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean deleteEmployee(int empID) {
+        String query = "delete from employee where empID = " + empID;
+        connection = dbConnector.connectToDB();
+        try {
+            statement = connection.createStatement();
+            int rowCount = statement.executeUpdate(query);
+            if(rowCount != 0) return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean addEmployeeToHistory(int empID) {
+        connection = dbConnector.connectToDB();
+        String query = "select employee.empID, employee.empName, employee.department, employee.skills, pa_form.rating, " +
+                "employee.role from employee join pa_form where employee.empID = pa_form.empID and " +
+                "employee.empID = 3";
+        String query2 = "insert into OldEmployees values (?, ?, ?, ?, ?, ?)";
+        try {
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(query);
+            resultSet.next();
+            preparedStatement = connection.prepareStatement(query2);
+            preparedStatement.setInt(1, resultSet.getInt(1));
+            preparedStatement.setString(2, resultSet.getString(2));
+            preparedStatement.setString(3, resultSet.getString(3));
+            preparedStatement.setString(4, resultSet.getString(4));
+            preparedStatement.setDouble(5, resultSet.getDouble(5));
+            preparedStatement.setString(6, resultSet.getString(6));
+            int rowCount = preparedStatement.executeUpdate();
+            if(rowCount!=0) return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

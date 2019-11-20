@@ -18,7 +18,8 @@ public class EmployeeBL {
         String query = "insert into pa_form values (?, ?, ?)";
         return dbHelper.insertToPAFormTAble(query, empID, rating, remarks);
     }
-    public void  validateEmployee(int id){
-        System.out.println("employee details \n ");
+
+    public boolean validateEmployee(int empID){
+        return dbHelper.validateEmployee(empID);
     }
 }

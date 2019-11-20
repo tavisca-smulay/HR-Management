@@ -16,4 +16,9 @@ public class EmployeeService {
     public boolean fillPAForm(int empID, double rating, String remarks){
         return employeeBL.fillPAForm(empID, rating, remarks);
     }
+
+    public boolean validateEmployee(int empID){
+        return employeeBL.validateEmployee(empID);
+    }
+
 }
